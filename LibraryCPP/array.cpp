@@ -2,15 +2,17 @@
 
 struct Array
 {
-    Data* data;
+    Data *data;
     size_t size;
 
-    Array(size_t size) {
+    Array(size_t size)
+    {
         this->size = size;
         this->data = new Data[size];
     }
 
-    ~Array() {
+    ~Array()
+    {
         delete[] data;
     }
 };
@@ -31,15 +33,18 @@ void array_delete(Array *arr)
 Data array_get(const Array *arr, size_t index)
 {
     size_t size = array_size(arr);
-    if (index < size) return arr->data[index];
-    else return Data();
+    if (index < size)
+        return arr->data[index];
+    else
+        return Data();
 }
 
 // sets the specified array element to the value
 void array_set(Array *arr, size_t index, Data value)
 {
     size_t size = array_size(arr);
-    if (index < size) arr->data[index] = value;
+    if (index < size)
+        arr->data[index] = value;
 }
 
 // returns array size
